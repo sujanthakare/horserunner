@@ -1,6 +1,6 @@
 import { GameType, IGameSchedule, GameResponse } from 'src/types';
 
-const getGameSchedules = async (gameType: GameType): Promise<[string | null, IGameSchedule?]> => {
+const getGameSchedule = async (gameType: GameType): Promise<[string | null, IGameSchedule?]> => {
 	try {
 		const response = await fetch(`https://www.atg.se/services/racinginfo/v1/api/products/${gameType}`);
 		if (response.ok) {
@@ -28,4 +28,4 @@ const getGameData = async (gameId: string): Promise<[string | null, GameResponse
 	}
 };
 
-export default { getGameSchedules, getGameData };
+export default { getGameSchedule, getGameData };

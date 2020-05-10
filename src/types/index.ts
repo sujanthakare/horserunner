@@ -11,9 +11,9 @@ export type GameInfo = {
 };
 
 export interface IGameSchedule {
-	betType: string;
-	upcoming: Array<GameInfo>;
-	results: Array<GameInfo>;
+	betType?: string;
+	upcoming?: Array<GameInfo>;
+	results?: Array<GameInfo>;
 }
 
 export type GameResponse = {

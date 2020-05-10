@@ -3,11 +3,7 @@ import { IStoreState } from './types';
 import { LOAD_SCHEDULE, LOAD_GAME_INFO } from './actionTypes';
 
 const defaultState: IStoreState = {
-	gameSchedule: {
-		betType: '',
-		results: [],
-		upcoming: [],
-	},
+	gameSchedule: {},
 	gameInfo: {},
 };
 

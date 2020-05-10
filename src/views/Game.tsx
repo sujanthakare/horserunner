@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { GameType, GameRace } from 'src/types';
+import { GameRace } from 'src/types';
 import { useGameInfo } from 'src/redux/hooks';
 import { Spin, Card, Collapse, Row } from 'antd';
 import moment from 'moment';
@@ -8,11 +8,10 @@ import Box from './components/Box';
 
 interface IProps {
 	gameId: string;
-	gameType?: GameType;
 }
 
 const Game = (props: IProps) => {
-	const { gameId, gameType } = props;
+	const { gameId } = props;
 
 	const [isLoading, setIsLoading] = useState(false);
 	const { gameInfo, loadGameSchedules } = useGameInfo(gameId);
@@ -56,7 +55,7 @@ const Game = (props: IProps) => {
 					{gameInfo.races.map((race, index) => {
 						return (
 							<Collapse.Panel header={renderHeader(race)} key={index}>
-								<Race race={race} gameType={gameType} />
+								<Race race={race} />
 							</Collapse.Panel>
 						);
 					})}

@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from 'react';
-import { GameRace, GameType } from 'src/types';
+import { GameRace } from 'src/types';
 import { Button, Table } from 'antd';
 
-const Race = ({ race }: { race: GameRace; gameType?: GameType }) => {
+const Race = ({ race }: { race: GameRace }) => {
 	const { starts } = race;
 
 	const [showCellsAtIndexMap, setShowCellsAtIndexMap] = useState<{ [x: string]: boolean }>({});
@@ -46,6 +46,7 @@ const Race = ({ race }: { race: GameRace; gameType?: GameType }) => {
 
 	return (
 		<Table
+			rowKey="rowIndex"
 			pagination={false}
 			dataSource={tableData}
 			columns={[

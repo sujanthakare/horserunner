@@ -3,14 +3,14 @@ import { GameType } from 'src/types';
 import { useSelector, useDispatch } from 'react-redux';
 import { getGameSchedule, getGameInfo } from './selectors';
 import { LOAD_SCHEDULE, LOAD_GAME_INFO } from './actionTypes';
-import gameService from './game_service';
+import gameService from './gameService';
 
 export const useGameSchedules = () => {
 	const dispatch = useDispatch();
 	const schedules = useSelector(getGameSchedule);
 	const loadGameSchedules = useCallback(
 		async (gameType: GameType) => {
-			const [error, gameSchedules] = await gameService.getGameSchedules(gameType);
+			const [error, gameSchedules] = await gameService.getGameSchedule(gameType);
 			dispatch({
 				type: LOAD_SCHEDULE,
 				payload: gameSchedules,
