@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { GameType, GameInfo } from 'src/contexts/types';
 import { useGameSchedules } from 'src/contexts/hooks';
-import { Tab, Card } from 'semantic-ui-react';
+import { Tab, Loader } from 'semantic-ui-react';
 import Game from './Game';
 
 interface IProps {
@@ -27,7 +27,7 @@ const GameSchedule: React.FC<IProps> = (props) => {
   }, [gameType, loadGameSchedule]);
 
   if (isLoading) {
-    return <p>Loading</p>;
+    return <Loader active />;
   }
 
   const renderGames = (games?: Array<GameInfo>) => {

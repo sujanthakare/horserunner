@@ -6,17 +6,8 @@ interface IProps {
 
 const Box: React.FC<IProps> = ({ children, bg }) => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        padding: '9px',
-        margin: '4px',
-        borderStyle: 'solid',
-        borderWidth: '1px',
-        borderColor: 'lightgrey',
-        backgroundColor: bg,
-      }}>
-      {children}
+    <div style={{ display: 'flex', padding: 3 }}>
+      <div style={{ backgroundColor: bg }}>{children}</div>
     </div>
   );
 };

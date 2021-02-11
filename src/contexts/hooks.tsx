@@ -15,7 +15,7 @@ export const useGameInfo = (gameId: string) => {
 
   const loadGameInfoWithGameId = useCallback(() => {
     return loadGameInfo(gameId);
-  }, [gameId]);
+  }, [gameId, loadGameInfo]);
   return {
     gameInfo: data.gameInfo[gameId],
     loadGameInfo: loadGameInfoWithGameId,
